@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Andrew Detroyer</title>
+  <meta name="description" content="Andrew Detroyer — Embedded / Full-Stack Developer. Save my contact, view my résumé, or reach out directly.">
+
+  <!-- Open Graph / link previews -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Andrew Detroyer">
+  <meta property="og:description" content="Embedded / Full-Stack Developer — tap to save my contact or view my résumé.">
+  <meta property="og:site_name" content="Andrew Detroyer">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Andrew Detroyer">
+  <meta name="twitter:description" content="Embedded / Full-Stack Developer — tap to save my contact or view my résumé.">
+
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #faf9f6;
+      --surface: #ffffff;
+      --text: #17171b;
+      --muted: #55555f;
+      --border: #e4e2dc;
+      --accent: #b5451b;
+      --accent-ink: #ffffff;
+      --focus: #b5451b;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #131316;
+        --surface: #1c1c20;
+        --text: #f3f2ee;
+        --muted: #a2a2ac;
+        --border: #2e2e34;
+        --accent: #ff7a4d;
+        --accent-ink: #17171b;
+        --focus: #ff7a4d;
+      }
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { margin: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      min-height: 100vh;
+      display: flex;
+    }
+
+    main {
+      width: 100%;
+      max-width: 26rem;
+      margin: 0 auto;
+      padding: clamp(2rem, 8vw, 4rem) 1.5rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .identity {
+      margin-bottom: 2.25rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 0.9rem;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 12vw, 3.1rem);
+      line-height: 1.04;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .tagline {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin: 0.6rem 0 0;
+    }
+
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      min-height: 3.25rem;
+      padding: 0.85rem 1.15rem;
+      border-radius: 0.7rem;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 1.02rem;
+      font-weight: 550;
+      text-decoration: none;
+      transition: border-color 0.15s ease, transform 0.05s ease;
+    }
+
+    .btn:active { transform: translateY(1px); }
+
+    .btn .label { flex: 1; }
+
+    .btn .hint {
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .btn .icon {
+      flex: none;
+      width: 1.4rem;
+      height: 1.4rem;
+      stroke: var(--muted);
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* Primary action: the one accent-filled control */
+    .btn--primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--accent-ink);
+      font-weight: 650;
+    }
+    .btn--primary .hint { color: var(--accent-ink); opacity: 0.82; }
+    .btn--primary .icon { stroke: var(--accent-ink); }
+
+    @media (hover: hover) {
+      .btn:hover { border-color: var(--accent); }
+      .btn--primary:hover { border-color: var(--accent); opacity: 0.94; }
+    }
+
+    a:focus-visible, .btn:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    footer {
+      margin-top: 2.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    footer a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+    @media (hover: hover) {
+      footer a:hover { color: var(--accent); border-color: var(--accent); }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="identity">
+      <p class="eyebrow">Contact card</p>
+      <h1>Andrew Detroyer</h1>
+      <p class="tagline">Embedded / Full-Stack Developer</p>
+    </div>
+
+    <nav aria-label="Ways to reach Andrew Detroyer">
+      <a class="btn btn--primary" href="contact.vcf">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+        <span class="label">Save contact</span>
+        <span class="hint">.vcf</span>
+      </a>
+
+      <a class="btn" href="resume.pdf">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/></svg>
+        <span class="label">View résumé</span>
+        <span class="hint">PDF</span>
+      </a>
+
+      <a class="btn" href="mailto:Andrewdetroyer@gmail.com">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><path d="m4 7 8 6 8-6"/></svg>
+        <span class="label">Email me</span>
+      </a>
+
+      <a class="btn" href="tel:+17343381208">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L20 13l1 4v2a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1z"/></svg>
+        <span class="label">Call or text</span>
+        <span class="hint">734 338 1208</span>
+      </a>
+    </nav>
+
+    <footer>
+      <a href="https://github.com/1destroyer100yt">github.com/1destroyer100yt</a>
+    </footer>
+  </main>
+</body>
+</html>
